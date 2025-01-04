@@ -1,0 +1,42 @@
+<div class="main">
+  <div class="title">
+    <div class="text text-center">
+      <h2 class="h1 text-uppercase fw-bold">portfolio component</h2>
+      <div class="content">
+        <div class="before"></div>
+        <div class="icon">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="before"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4 overflow-hidden">
+    <div class="row g-5">
+      @for (item of itemList; track $index) {
+      <div class="col-md-4">
+        <div class="second-content">
+          <div (click)="openModal(item)" class="image">
+            <img [src]="item.image" class="w-100 rounded-4" alt="" />
+            <div class="layer">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      }
+    </div>
+  </div>
+
+  <div
+    [class.d-none]="!isModalOpen"
+    [class.d-block]="isModalOpen"
+    (click)="closeModal()"
+    class="mudal d-flex justify-content-center align-content-center"
+  >
+    <div class="modal-image d-flex justify-content-center align-items-center">
+      <img [src]="selectedImage" class="w-75" alt="" />
+    </div>
+  </div>
+</div>

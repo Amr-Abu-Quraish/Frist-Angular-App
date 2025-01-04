@@ -1,0 +1,11 @@
+.navbar {
+  background-color: #b20a0a;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+
+.bg-next {
+  background-color: black !important;
+}

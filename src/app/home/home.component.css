@@ -1,0 +1,27 @@
+.home {
+  background-color: black;
+  padding: 40px;
+}
+.home .container .image img {
+  width: 25%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.content .before,
+.content .after {
+  width: 100px;
+  height: 5px;
+  background-color: #fff;
+  position: relative;
+  top: 12px;
+}
+
+.icon i {
+  font-size: 20px;
+  color: #fff;
+  margin-inline: 15px;
+}
