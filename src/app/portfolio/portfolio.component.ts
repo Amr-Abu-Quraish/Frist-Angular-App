@@ -48,7 +48,6 @@ export class PortfolioComponent {
   }
 
   openModal(index: number): void {
-    console.log('Opening modal with index:', index);
     this.currentIndex = index;
     this.isModalOpen = true;
   }
@@ -58,14 +57,20 @@ export class PortfolioComponent {
   }
 
   nextImage(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.itemList.length;
-    console.log('Next image index:', this.currentIndex);
+    if (this.currentIndex < this.itemList.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0;
+    }
   }
 
+
   prevImage(): void {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.itemList.length) % this.itemList.length;
-    console.log('Previous image index:', this.currentIndex);
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.itemList.length - 1;
+    }
   }
 
 }
