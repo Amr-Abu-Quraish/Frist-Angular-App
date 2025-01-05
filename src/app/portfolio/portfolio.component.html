@@ -16,7 +16,7 @@
       @for (item of itemList; track $index) {
       <div class="col-md-4">
         <div class="second-content">
-          <div (click)="openModal(item)" class="image">
+          <div (click)="openModal($index)" class="image">
             <img [src]="item.image" class="w-100 rounded-4" alt="" />
             <div class="layer">
               <i class="fa-solid fa-plus"></i>
@@ -32,11 +32,19 @@
   <div
     [class.d-none]="!isModalOpen"
     [class.d-block]="isModalOpen"
-    (click)="closeModal()"
     class="mudal d-flex justify-content-center align-content-center"
   >
-    <div class="modal-image d-flex justify-content-center align-items-center">
-      <img [src]="selectedImage" class="w-75" alt="" />
+    <div class="icon">
+      <div class="modal-image d-flex justify-content-center align-items-center">
+        <i (click)="prevImage()" class="fa-solid fa-circle-left" id="prev"></i>
+        <img [src]="selectedImage?.image" class="w-75" alt="" />
+        <i
+          (click)="closeModal()"
+          class="fa-solid fa-circle-xmark"
+          id="close"
+        ></i>
+        <i (click)="nextImage()" class="fa-solid fa-circle-right" id="next"></i>
+      </div>
     </div>
   </div>
 </div>

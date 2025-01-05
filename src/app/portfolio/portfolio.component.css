@@ -73,18 +73,18 @@ h1 {
   color: #fff;
   cursor: pointer;
 }
-.icon #left {
+.icon #prev {
   position: absolute;
   top: 50%;
-  left: 27%;
+  right: 69%;
 }
-.icon #right {
+.icon #next {
   position: absolute;
   top: 50%;
   left: 69%;
 }
 .icon #close {
   position: absolute;
-  top: 25%;
-  left: 68%;
+  top: 23%;
+  right: 27%;
 }
